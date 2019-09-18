@@ -1,0 +1,25 @@
+{
+  "name": "@minipaylab/token-demo",
+  "version": "1.0.0",
+  "description": "Token ethereum erc20 ",
+  "main": "truffle-config.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@work:minipaylab/token-demo.git"
+  },
+  "keywords": [
+    "Truffle",
+    "Token",
+    "Contract",
+    "Demo"
+  ],
+  "author": "mini-paylab",
+  "license": "MIT"
+}
