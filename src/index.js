@@ -1,6 +1,8 @@
 const IEnv = require('dotenv').config({path:".config/.env",encoding:"utf8"}); 
 const MixHandler = require('./packages/mix-handler.js');
 const TruffleConfig = require('../truffle-config.js');
+const tokenDemoVersion = require("../package.json").version;
+
 var sh = require('shelljs');
 
 const C = {
