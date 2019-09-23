@@ -252,7 +252,7 @@
         "type": "function"
       }
     ],
-    "address": "0x6E2731a2965D0bFAC238E1191f6c81B1988b2Db3"
+    "address": "0x68976B4d55A4EAC8bA7c70862591C544B0ceDEa2"
   },
   "IERC20": {
     "contractName": "IERC20",
@@ -435,6 +435,6 @@
   "safemath": {
     "contractName": "safemath",
     "abi": [],
-    "address": "0x754a249CF0234AE984e621cC44aa84B6DE5BBA0C"
+    "address": "0x14b618da148dF66cf029b79C4bdA526262cf0aD4"
   }
 }
