@@ -65,6 +65,14 @@ class MixHandler {
 
   }
 
+  /**
+   * {
+   *    {CountachDemo:{
+   *      "address":"",
+   *      "contract":{}
+   *    }
+   * }
+   */
   generatorABI(cover){
     let isCover = typeof cover === 'bool' ? cover : true;
     console.log("overwrite>>"+ isCover);
@@ -91,6 +99,33 @@ class MixHandler {
     fs.writeFile(this.ctx['coreabi'],JSON.stringify(coreABIs,null,'  '),err=>{
       if(err)console.log(err);
     });
+  }
+
+  generatorOriginABI(cover){
+    let rs = _loadABIFiles(path.join(this.ROOT_HOME,this.ctx['abiSrc']));
+    if(!rs || JSON.stringify(rs) =='{}'){
+      console.error("load JSON error:",path.join(this.ROOT_HOME,this.ctx['abiSrc']));
+    }
+
+    let coreABIs = {};
+    for(var i = 0,len = rs.length;i < len;i++){
+      let _contract = rs[i][0];
+      let _name = _contract.contractName;
+
+      if(!_name || _name.length <= 0)continue;
+
+      coreABIs[_name] = {
+        "contract":_contract
+      };
+
+      let _contractAddress = _getAddressFromJson(_contract);
+      if(_contractAddress)
+        coreABIs[_name]['address']=_contractAddress;
+    }
+
+     fs.writeFile(this.ctx['coreabi'],JSON.stringify(coreABIs,null,'  '),err=>{
+      if(err)console.log(err);
+    });   
   }
 
   getCtx(){

@@ -28,4 +28,4 @@ log = sh.exec('truffle '+mode,{silent:true}).stdout;
 console.log("Compile ABI:",log);
 
 var mixHandler = new MixHandler(C);
-mixHandler.generatorABI(true);
+mixHandler.generatorOriginABI(true);
